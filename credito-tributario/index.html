@@ -1,0 +1,778 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<!-- Google Tag Manager (trocar GTM-XXXXXXX pelo contêiner do Otavio) -->
+<script>
+var GTM_ID = 'GTM-XXXXXXX';
+/* Com o ID de exemplo nada é carregado: o Google responde a GTM-XXXXXXX com um contêiner que não é do Otavio. */
+if (!/X{4}/.test(GTM_ID)) {(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer',GTM_ID);}
+</script>
+<!-- End Google Tag Manager -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>O sistema de IA que levanta 5 anos de crédito tributário | IA para Contabilidade na Prática</title>
+<meta name="description" content="O sistema de IA que levanta 5 anos de crédito tributário do seu cliente, com nota de risco, memória de cálculo e a apresentação da reunião com a marca do seu escritório.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800;900&family=Geist+Mono:wght@400;500&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FFFFFF; --soft:#F2EFE9; --soft-2:#E7E2D8;
+  --ink:#0F0F12; --body:#45454D; --muted:#77767E;
+  --line:#E6E2DA; --line-2:#D2CCC1;
+  --green:#0F0F12; --green-2:#000000;
+  --mint:#E5392B; --mint-2:#E5392B; --mint-text:#C9301F; --mint-wash:#FCEBE8;
+  --amber:#E5392B; --red:#E5392B;
+  --display:'Big Shoulders Display','Arial Narrow',sans-serif;
+  --sans:'Outfit',system-ui,sans-serif;
+  --mono:'Geist Mono',ui-monospace,monospace;
+  --wrap:1160px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,video{display:block;max-width:100%}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+.mono{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase}
+h1,h2,h3{font-family:var(--display);line-height:.98;letter-spacing:.005em;text-transform:uppercase;text-wrap:balance}
+h2::after{content:"";display:inline-block;width:.32em;height:.32em;background:var(--red);margin-left:.14em;vertical-align:baseline}
+.final h2::after,.next h2::after{display:none}
+h2{font-size:clamp(2.2rem,4.6vw,3.6rem);font-weight:800;max-width:20ch}
+h3{font-size:1.5rem;font-weight:800;letter-spacing:.01em}
+p{color:var(--body)}
+.kicker{display:inline-flex;align-items:center;gap:10px;color:var(--mint-text);margin-bottom:16px}
+.kicker::before{content:"";width:9px;height:9px;background:var(--red)}
+.lead{font-size:1.12rem;max-width:62ch;margin-top:18px}
+section{padding:110px 0;position:relative}
+
+/* grade de fundo */
+.grid-bg{position:absolute;inset:0;pointer-events:none;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:48px 48px;mask-image:radial-gradient(ellipse at 70% 30%,#000 10%,transparent 70%);-webkit-mask-image:radial-gradient(ellipse at 70% 30%,#000 10%,transparent 70%);opacity:.8}
+
+/* topo */
+.top{display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-bottom:1px solid var(--line);position:relative;z-index:2}
+.top .mono{color:var(--muted)}
+.top b{color:var(--red);font-weight:500}
+.logo{display:flex;align-items:center;gap:10px}
+.logo i{width:22px;height:22px;background:var(--ink);position:relative}.logo i::after{content:"";position:absolute;right:0;top:0;width:8px;height:8px;background:var(--red)}
+
+/* botão */
+.btn{display:inline-flex;align-items:center;gap:12px;border:0;cursor:pointer;font-family:var(--display);font-weight:800;font-size:1.3rem;text-transform:uppercase;letter-spacing:.04em;
+  background:var(--ink);color:#fff;padding:18px 30px;border-radius:4px;box-shadow:6px 6px 0 var(--red);transition:transform .15s,box-shadow .15s}
+.btn::after{content:"→";font-family:var(--sans);font-weight:600;transition:transform .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn:hover::after{transform:translateX(4px)}
+.btn:active{transform:translate(4px,4px);box-shadow:2px 2px 0 var(--red)}
+.micro{font-size:.88rem;color:var(--muted);margin-top:14px}
+
+/* HERO */
+.hero{position:relative;padding:70px 0 90px;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;position:relative;z-index:1}
+.chip{display:inline-flex;align-items:center;gap:10px;padding:8px 14px 8px 8px;border:1px solid var(--line-2);border-radius:3px;background:#fff;color:var(--ink)}
+.chip .flag{display:inline-grid;place-items:center;height:22px;padding:0 8px;border-radius:2px;background:var(--red);color:#fff;font-size:.68rem}
+.pre{font-size:1.05rem;color:var(--muted);margin-top:24px;max-width:46ch}
+.hero h1{font-size:clamp(2.5rem,5vw,4.1rem);font-weight:800;margin-top:14px}
+.hero h1 em{font-style:normal;color:var(--red);position:relative;white-space:nowrap}
+.hero h1 em::after{display:none}
+.hero .sub{font-size:1.12rem;margin-top:22px;max-width:52ch}
+.hero .sub strong{color:var(--ink)}
+.hero .cta{margin-top:32px}
+
+/* palco do hero */
+.stage{position:relative;aspect-ratio:1/1.02}
+.blob{position:absolute;inset:6% 4% 8% 10%;border-radius:6px;background:var(--ink);transform:rotate(-3deg)}
+.blob::after{content:"";position:absolute;right:-14px;top:-14px;width:46px;height:46px;background:var(--red)}
+.blob::before{content:"";position:absolute;inset:0;border-radius:inherit;background-image:linear-gradient(rgba(242,239,233,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(242,239,233,.08) 1px,transparent 1px);background-size:28px 28px}
+.screen{position:absolute;left:14%;right:6%;top:15%;border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 30px 70px -20px rgba(15,15,18,.55);border:1px solid rgba(255,255,255,.4)}
+.bar{display:flex;gap:6px;padding:10px 12px;background:#F1F4F2;border-bottom:1px solid var(--line)}
+.bar i{width:9px;height:9px;border-radius:50%;background:#D6DED9}
+.bar span{margin-left:10px;color:var(--muted);font-size:.62rem}
+.float{position:absolute;background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px;box-shadow:0 18px 40px -18px rgba(15,15,18,.35);animation:boia 6s ease-in-out infinite}
+.float .mono{color:var(--muted);font-size:.62rem}
+.f-gauge{left:0;bottom:6%;display:flex;align-items:center;gap:14px;animation-delay:-2s}
+.gauge{width:74px;height:74px;position:relative}
+.gauge svg{transform:rotate(-90deg)}
+.gauge b{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:900;font-size:1.2rem;white-space:nowrap}
+.f-gauge p{font-size:.86rem;line-height:1.3;color:var(--ink);max-width:15ch}
+.f-rule{right:0;top:2%;max-width:230px;animation-delay:-4s}
+.f-rule .row{display:flex;align-items:center;gap:8px;margin-top:6px;font-size:.86rem;color:var(--ink);font-weight:500}
+.f-rule .ok{width:18px;height:18px;border-radius:2px;background:var(--ink);display:grid;place-items:center;font-size:.7rem;color:#fff}
+.f-zero{right:4%;bottom:0;animation-delay:-1s}
+.f-zero b{font-family:var(--display);font-weight:900;font-size:1.7rem;color:var(--ink);text-transform:uppercase}
+@keyframes boia{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+
+/* faixa corrida */
+.ticker{background:var(--ink);color:#fff;overflow:hidden;border-block:1px solid var(--green-2)}
+.ticker .track{display:flex;width:max-content;animation:corre 38s linear infinite}
+.ticker span{display:flex;align-items:center;gap:18px;padding:16px 26px;white-space:nowrap;font-family:var(--display);font-weight:800;font-size:1.3rem;letter-spacing:.04em;text-transform:uppercase}
+.ticker span::after{content:"";width:9px;height:9px;background:var(--red)}
+@keyframes corre{to{transform:translateX(-50%)}}
+
+/* números */
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--ink);border-radius:2px;overflow:hidden;margin-top:56px;background:#fff}
+.facts div{padding:30px 28px;border-right:1px solid var(--line);position:relative}
+.facts div:last-child{border-right:0}
+.facts b{display:block;font-family:var(--display);font-weight:900;font-size:clamp(3rem,5.6vw,4.2rem);line-height:.9;color:var(--ink);text-transform:uppercase}
+.facts b small{font-size:.6em;color:var(--red)}
+.facts span{display:block;margin-top:10px;color:var(--body);font-size:.95rem;max-width:26ch}
+.facts div::before{content:"";position:absolute;left:28px;top:0;width:10px;height:10px;background:var(--red)}
+
+/* problema: meses */
+.prob{background:var(--soft)}
+.prob .wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.cal{display:grid;gap:14px}
+.mes{background:#fff;border:1px solid var(--line);border-radius:4px;padding:18px 20px}
+.mes header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.mes header .mono{color:var(--muted)}
+.lanc{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 12px;border-radius:10px;background:var(--soft);font-size:.92rem}
+.lanc + .lanc{margin-top:8px}
+.lanc .q{font-family:var(--mono);font-size:.72rem;color:var(--muted)}
+.tag{font-family:var(--mono);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;padding:4px 8px;border-radius:2px;white-space:nowrap}
+.tag.red{background:var(--mint-wash);color:var(--mint-text)}
+.tag.ok{background:var(--ink);color:#fff}
+.tag.amb{background:var(--soft-2);color:var(--ink)}
+.mes.velho{opacity:.95}
+.ilustra{font-size:.78rem;color:var(--muted);margin-top:4px}
+
+/* ciclo */
+.ciclo{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:center}
+.loop{position:relative;aspect-ratio:1;max-width:480px;width:100%;margin:0 auto}
+.loop svg{position:absolute;inset:0;width:100%;height:100%}
+.loop .ring{stroke-dasharray:6 10;animation:gira 30s linear infinite;transform-origin:50% 50%}
+@keyframes gira{to{transform:rotate(360deg)}}
+.node{position:absolute;width:36%;background:#fff;border:1px solid var(--line-2);border-radius:3px;padding:14px 16px;box-shadow:0 14px 30px -18px rgba(15,15,18,.35);transform:translate(-50%,-50%)}
+.node .mono{color:var(--mint-text);font-size:.64rem}
+.node b{display:block;font-family:var(--display);font-weight:800;font-size:1.2rem;line-height:1.05;margin-top:4px;text-transform:uppercase}
+.n1{left:50%;top:12%}.n2{left:86%;top:50%}.n3{left:50%;top:88%}.n4{left:14%;top:50%}
+.n4{background:var(--green);border-color:var(--green)}
+.n4 b{color:#fff}.n4 .mono{color:var(--red)}
+.loop .centro{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);text-align:center}
+.loop .centro b{font-family:var(--display);font-weight:900;font-size:1.45rem;color:var(--ink);line-height:1;text-transform:uppercase}
+.loop .centro span{display:block;font-size:.74rem;color:var(--muted);max-width:12ch;margin:6px auto 0}
+
+/* 1 em cada 10 */
+.dez{margin-top:30px;background:var(--soft);border-radius:4px;padding:24px}
+.dez .q{display:grid;grid-template-columns:repeat(10,1fr);gap:8px;margin-top:14px}
+.dez .q i{aspect-ratio:1;border-radius:2px;background:var(--ink);transform:scale(.4);opacity:0;transition:transform .5s cubic-bezier(.3,1.5,.5,1),opacity .4s}
+.dez .q i.r{background:var(--red)}
+.dez.in .q i{transform:scale(1);opacity:1}
+.dez .leg{display:flex;gap:20px;flex-wrap:wrap;margin-top:14px;font-size:.88rem;color:var(--body)}
+.dez .leg span{display:flex;align-items:center;gap:8px}
+.dez .leg span::before{content:"";width:12px;height:12px;border-radius:1px;background:var(--ink)}
+.dez .leg span.r::before{background:var(--red)}
+
+/* confiança */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
+.card{background:#fff;border:1px solid var(--line-2);border-radius:3px;padding:28px;position:relative;overflow:hidden;transition:transform .25s,box-shadow .25s}
+.card:hover{transform:translateY(-4px);box-shadow:0 24px 50px -28px rgba(15,15,18,.4)}
+.card .ico{width:52px;height:52px;border-radius:2px;background:var(--ink);display:grid;place-items:center;margin-bottom:22px}
+.card .ico svg{width:26px;height:26px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.card .mono{color:var(--muted)}
+.card h3{margin:8px 0 10px}
+.card .big{position:absolute;right:10px;top:-8px;font-family:var(--display);font-weight:900;font-size:6.4rem;color:var(--soft);line-height:1;z-index:0}
+.card > *:not(.big){position:relative;z-index:1}
+
+/* passos */
+.steps{margin-top:56px;display:grid;gap:80px}
+.step{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:center}
+.step:nth-child(even) .txt{order:2}
+.step .n{font-family:var(--display);font-weight:900;font-size:5rem;line-height:.85;color:var(--red)}
+.step h3{font-size:1.7rem;margin:10px 0 12px}
+.ganho{margin-top:16px;padding:12px 16px;border-left:4px solid var(--red);background:var(--soft);color:var(--ink);font-weight:500}
+.real{display:inline-flex;align-items:center;gap:8px;margin-top:18px;color:var(--muted)}
+.real i{width:8px;height:8px;background:var(--red);box-shadow:0 0 0 0 rgba(229,57,43,.5);animation:pulsa 2s infinite}
+@keyframes pulsa{70%{box-shadow:0 0 0 10px rgba(229,57,43,0)}100%{box-shadow:0 0 0 0 rgba(229,57,43,0)}}
+.janela{position:relative;max-width:440px;width:100%;margin:0 auto}
+.janela::before{content:"";position:absolute;inset:18px -18px -18px 18px;border-radius:2px;background:var(--ink);z-index:-1}
+.janela::after{content:"";position:absolute;right:-26px;bottom:-26px;width:22px;height:22px;background:var(--red)}
+.step:nth-child(even) .janela::after{right:auto;left:-26px}
+.step:nth-child(even) .janela::before{inset:18px 18px -18px -18px}
+.janela .screen{position:relative;inset:auto;left:auto;right:auto;top:auto;border:1px solid var(--line);max-width:440px;margin:0 auto}
+.screen video{width:100%;max-height:520px;object-fit:cover;object-position:top}
+.stage .screen video{max-height:none;aspect-ratio:4/5}
+
+/* fluxo */
+.fluxo{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:48px;position:relative}
+.fluxo::before{content:"";position:absolute;left:12%;right:12%;top:38px;height:2px;background:repeating-linear-gradient(90deg,var(--red) 0 10px,transparent 10px 18px);background-size:18px 2px;animation:anda 1s linear infinite}
+@keyframes anda{to{background-position:18px 0}}
+.fluxo div{text-align:center;position:relative;padding:0 10px}
+.fluxo .bol{width:76px;height:76px;margin:0 auto;border-radius:3px;background:#fff;border:1px solid var(--line-2);display:grid;place-items:center;box-shadow:0 10px 24px -14px rgba(15,15,18,.4)}
+.fluxo .bol svg{width:30px;height:30px;stroke:var(--ink);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.fluxo div:nth-child(2) .bol{background:var(--green);border-color:var(--green)}
+.fluxo div:nth-child(2) .bol svg{stroke:#fff}
+.fluxo div:nth-child(2) .bol{box-shadow:5px 5px 0 var(--red)}
+.fluxo b{display:block;font-family:var(--display);font-weight:800;margin-top:16px;font-size:1.25rem;text-transform:uppercase}
+.fluxo span{display:block;font-size:.88rem;color:var(--muted);margin-top:4px}
+.seguro{margin-top:44px;display:flex;align-items:center;gap:14px;justify-content:center;flex-wrap:wrap;color:var(--body)}
+.seguro .pill{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border-radius:2px;background:var(--soft);border:1px solid var(--line);font-size:.9rem}
+.seguro .pill::before{content:"";width:8px;height:8px;background:var(--red)}
+
+/* antes x hoje */
+.ba{display:grid;grid-template-columns:1fr auto 1fr;gap:20px;align-items:stretch;margin-top:44px}
+.ba > div{border-radius:3px;padding:30px}
+.ba .antes{background:#fff;border:1px dashed var(--line-2)}
+.ba .hoje{background:var(--green);color:#fff}
+.ba .hoje p{color:#E7E3DC}
+.ba .hoje .mono{color:var(--red)}
+.ba .hoje{box-shadow:8px 8px 0 var(--red)}
+.ba .antes .mono{color:var(--muted)}
+.ba p{margin-top:10px;font-size:1.08rem}
+.ba .seta{display:grid;place-items:center;font-size:1.8rem;color:var(--red)}
+
+/* casos */
+.casos{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px}
+.caso{border:1px solid var(--line-2);border-radius:3px;padding:26px;background:#fff;display:flex;flex-direction:column}
+.caso .onde{display:flex;align-items:center;gap:10px;color:var(--muted)}
+.caso .onde i{width:30px;height:30px;border-radius:2px;background:var(--ink);display:grid;place-items:center;font-style:normal;font-family:var(--mono);font-size:.62rem;color:#fff;font-weight:500}
+.caso h3{margin:16px 0 8px}
+.caso.este{border:2px solid var(--ink);box-shadow:6px 6px 0 var(--red)}
+.caso.este .selo{align-self:flex-start;margin-top:auto;padding-top:14px}
+.dono{margin-top:28px;border-radius:3px;background:var(--soft);padding:28px 30px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.dono h3{font-size:1.4rem}
+.pills{display:flex;gap:10px;flex-wrap:wrap}
+.pills span{padding:9px 14px;border-radius:2px;background:#fff;border:1px solid var(--line);font-size:.9rem;color:var(--ink)}
+
+/* quem */
+.who{display:grid;grid-template-columns:.75fr 1.25fr;gap:56px;align-items:center}
+.photo{position:relative}
+.photo img{border-radius:3px;width:100%;aspect-ratio:4/5;object-fit:cover;filter:saturate(.95)}
+.photo::before{content:"";position:absolute;inset:-14px 14px 14px -14px;border-radius:2px;background:var(--red);z-index:-1}
+.photo figcaption{position:absolute;left:16px;bottom:16px;background:#fff;color:var(--ink);padding:8px 12px;border-radius:10px}
+.who p + p{margin-top:14px}
+
+/* próxima etapa */
+.next{border:1px solid var(--ink);border-radius:3px;padding:44px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;background:#fff;position:relative;overflow:hidden}
+.next::after{content:"40";position:absolute;right:10px;bottom:-50px;font-family:var(--display);font-weight:900;font-size:17rem;color:var(--soft);line-height:1;z-index:0}
+.next > *{position:relative;z-index:1}
+.next ul{list-style:none;display:grid;gap:12px}
+.next li{display:flex;gap:14px;align-items:center;padding:14px 16px;border-radius:2px;background:var(--soft);font-weight:500}
+.next li b{font-family:var(--mono);font-weight:500;color:var(--red);font-size:.8rem}
+
+/* final */
+.final{background:var(--ink);color:#fff;border-radius:4px;padding:72px 40px;text-align:center;position:relative;overflow:hidden;margin:0 0 60px}
+.final::before{content:"";position:absolute;left:0;right:0;bottom:0;height:46px;background:linear-gradient(90deg,var(--red) 0 40%,transparent 40% 44%,var(--red) 44% 66%,transparent 66% 70%,var(--red) 70% 82%,transparent 82% 86%,var(--red) 86% 91%,transparent 91%);opacity:.95;height:8px}
+.final > *{position:relative}
+.final .kicker{color:#fff;justify-content:center}
+.final .kicker::before{background:var(--red)}
+.final h2{margin:0 auto;max-width:24ch;color:#fff}
+.final .btn{background:var(--red);color:#fff;box-shadow:6px 6px 0 #fff;margin-top:34px}
+.final .micro{color:#BDB9B2}
+footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:26px 0 40px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+
+/* animação de entrada */
+.rise{opacity:0;transform:translateY(18px);animation:sobe .8s cubic-bezier(.2,.7,.2,1) forwards}
+.d1{animation-delay:.08s}.d2{animation-delay:.18s}.d3{animation-delay:.28s}.d4{animation-delay:.38s}
+@keyframes sobe{to{opacity:1;transform:none}}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s,transform .8s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.bar-anim{transition:stroke-dashoffset 1.6s cubic-bezier(.2,.7,.2,1)}
+
+/* formulário */
+dialog{border:0;border-radius:4px;padding:0;max-width:440px;width:calc(100% - 32px);margin:auto;box-shadow:0 40px 100px -30px rgba(15,15,18,.6)}
+dialog::backdrop{background:rgba(15,15,18,.6);backdrop-filter:blur(4px)}
+.fm{padding:34px 30px 28px;position:relative}
+.fm h3{font-size:1.6rem}
+.fm > p{margin:8px 0 18px;font-size:.95rem}
+.fm label{display:block;font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:14px 0 6px}
+.fm input{width:100%;padding:14px;border:1px solid var(--line-2);border-radius:3px;font:inherit;font-size:1rem;color:var(--ink);background:#fff}
+.fm input:focus{outline:2px solid var(--ink);outline-offset:1px;border-color:transparent}
+.fm .err{display:none;color:var(--red);font-size:.82rem;margin-top:5px}
+.fm input.bad{border-color:var(--red)}
+.fm input.bad + .err{display:block}
+.fm .btn{width:100%;justify-content:center;margin-top:22px}
+.fm .x{position:absolute;right:14px;top:12px;border:0;background:var(--soft);width:34px;height:34px;border-radius:50%;font-size:1.3rem;cursor:pointer;color:var(--muted)}
+.lgpd{font-size:.78rem;color:var(--muted);margin-top:14px;text-align:center}
+
+@media (max-width:900px){
+  section{padding:80px 0}
+  .hero{padding:40px 0 70px}
+  .hero .wrap,.prob .wrap,.ciclo,.step,.who,.next{grid-template-columns:1fr;gap:40px}
+  .step:nth-child(even) .txt{order:0}
+  .stage{max-width:520px;margin:0 auto;width:100%}
+  .facts,.cards,.casos{grid-template-columns:1fr}
+  .facts div{border-right:0;border-bottom:1px solid var(--line)}
+  .facts div:last-child{border-bottom:0}
+  .fluxo{grid-template-columns:1fr 1fr;row-gap:36px}
+  .fluxo::before{display:none}
+  .ba{grid-template-columns:1fr}
+  .ba .seta{transform:rotate(90deg)}
+  .next{padding:30px 22px}
+  .final{padding:52px 22px;border-radius:22px}
+  .top .lado{display:none}
+}
+@media (max-width:520px){
+  .wrap{padding:0 16px}
+  .hero h1 em{white-space:normal}
+  .f-rule{max-width:190px}
+  .node{width:48%;padding:10px 12px}
+  .node b{font-size:.9rem}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .rise,.reveal{opacity:1;transform:none}
+  .dez .q i{transform:none;opacity:1}
+}
+
+/* solução 1 */
+.hero h1{font-size:clamp(2.2rem,3.9vw,3.25rem)}
+.stage{aspect-ratio:1/.9}
+.fluxo{margin-top:90px}
+.screen.deitada{left:6%;right:2%;top:20%}
+.stage .screen.deitada video{aspect-ratio:16/10}
+.f-rule .row + .row{margin-top:4px}
+.f-nota{left:0;bottom:8%;animation-delay:-2s}
+.f-nota .letras{display:flex;gap:6px;margin-top:8px}
+.f-nota .letras b{width:34px;height:34px;display:grid;place-items:center;font-family:var(--display);font-weight:900;font-size:1.3rem;background:var(--soft);color:var(--ink);border-radius:2px}
+.f-nota .letras b.a{background:var(--ink);color:#fff;box-shadow:3px 3px 0 var(--red)}
+.notas{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:30px}
+.notas div{background:#fff;border:1px solid var(--line-2);border-radius:3px;padding:16px 14px}
+.notas b{display:block;font-family:var(--display);font-weight:900;font-size:2.6rem;line-height:.9;color:var(--ink)}
+.notas div:first-child{background:var(--ink);border-color:var(--ink)}
+.notas div:first-child b{color:var(--red)}
+.notas div:first-child span{color:#E7E3DC}
+.notas span{display:block;margin-top:8px;font-size:.86rem;line-height:1.3;color:var(--body)}
+.janela.larga{max-width:640px}
+.janela.larga .screen{max-width:none}
+.janela.larga .screen video,.janela.larga .screen img{max-height:none}
+.janela .botao{position:absolute;left:-6%;bottom:-9%;width:78%;background:#fff;border:2px solid var(--ink);box-shadow:6px 6px 0 var(--red);border-radius:2px;transform:rotate(-1.5deg);z-index:2}
+.janela .botao span{position:absolute;left:-2px;bottom:100%;background:var(--red);color:#fff;padding:4px 10px;font-size:.6rem}
+.dono > p{color:var(--body)}
+@media (max-width:900px){.notas{grid-template-columns:1fr 1fr}.janela .botao{left:-2%;width:92%;bottom:-12%}}
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div class="wrap">
+  <header class="top">
+    <span class="logo"><i></i><span class="mono">IA para Contabilidade <b>na Prática</b></span></span>
+    <span class="mono lado">Solução 1 · Crédito tributário</span>
+  </header>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="grid-bg"></div>
+  <div class="wrap">
+    <div>
+      <span class="chip mono rise"><span class="flag">SP</span>Caso real · escritório tributário do interior</span>
+      <p class="pre rise d1">O crédito do seu cliente prescreve enquanto o Excel do analista está na terceira aba.</p>
+      <h1 class="rise d1">O sistema de IA que levanta <em>5 anos de crédito</em> tributário do seu cliente e já entrega a apresentação da reunião com a marca do seu escritório.</h1>
+      <p class="sub rise d2">Você sobe o Cartão CNPJ e os relatórios do MA. O sistema desconta o que o cliente já aproveitou, separa cada tese em administrativa e judicial e dá nota de risco de A a D. <strong>A IA classifica e redige, a conta sai em código com memória de cálculo, e o seu analista revisa e aprova.</strong></p>
+      <div class="cta rise d3">
+        <button class="btn" type="button" data-abrir>Quero ver o sistema rodando</button>
+        <p class="micro">Gratuito. O vídeo abre assim que você se cadastra.</p>
+      </div>
+    </div>
+
+    <div class="stage rise d2" aria-hidden="true">
+      <div class="blob"></div>
+      <div class="screen deitada">
+        <div class="bar"><i></i><i></i><i></i><span class="mono">achados do caso</span></div>
+        <!-- TROCAR: capa real do vídeo (frame do Otavio com o sistema na tela) -->
+        <video src="midia/vtax-caso.mp4" poster="midia/vtax-caso.jpg" muted loop playsinline preload="metadata" data-loop></video>
+      </div>
+      <div class="float f-rule">
+        <span class="mono">Como sai a conta</span>
+        <div class="row"><span class="ok">✓</span>Em código, sem IA</div>
+        <div class="row"><span class="ok">✓</span>Com memória de cálculo</div>
+        <div class="row"><span class="ok">✓</span>Revisada pelo analista</div>
+      </div>
+      <div class="float f-nota">
+        <span class="mono">Nota de risco</span>
+        <div class="letras"><b class="a">A</b><b>B</b><b>C</b><b>D</b></div>
+      </div>
+      <div class="float f-zero">
+        <span class="mono">Para a reunião</span><br>
+        <b>1 botão</b>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FAIXA -->
+<div class="ticker" aria-hidden="true">
+  <div class="track">
+    <span>5 anos de PIS/Cofins e ICMS</span><span>Nota de risco de A a D</span><span>Conta em código com memória de cálculo</span><span>O analista revisa cada achado</span><span>Apresentação com a marca do escritório</span>
+    <span>5 anos de PIS/Cofins e ICMS</span><span>Nota de risco de A a D</span><span>Conta em código com memória de cálculo</span><span>O analista revisa cada achado</span><span>Apresentação com a marca do escritório</span>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="facts reveal">
+    <div><b>5 anos</b><span>de PIS/Cofins e ICMS apurados por empresa, tese por tese</span></div>
+    <div><b>A a D</b><span>a nota de risco de cada crédito, separado em administrativo e judicial</span></div>
+    <div><b>1 botão</b><span>gera a apresentação da reunião com a marca do escritório</span></div>
+  </div>
+</div>
+
+<!-- CONFIANÇA -->
+<section>
+  <div class="wrap">
+    <span class="mono kicker">Por que dá para levar ao cliente</span>
+    <h2>Crédito que você pode assinar embaixo</h2>
+    <div class="cards">
+      <article class="card reveal">
+        <span class="big">01</span>
+        <div class="ico"><svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M8 7h8M8 11h2M12 11h2M16 11h0M8 15h2M12 15h2M8 18h8"/></svg></div>
+        <span class="mono">A conta</span>
+        <h3>A IA não faz a conta</h3>
+        <p>A conta sai em código e dá o mesmo resultado toda vez. Cada valor vem com a memória de cálculo: fórmula, CFOP, CST, período e passo a passo, relatório por relatório. A IA entra para classificar, fundamentar e redigir.</p>
+      </article>
+      <article class="card reveal">
+        <span class="big">02</span>
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M4 12h16"/><path d="M4 6h16M4 18h10"/><path d="M17 15l4 4M21 15l-4 4"/></svg></div>
+        <span class="mono">O que já foi usado</span>
+        <h3>O que o cliente já aproveitou sai do valor</h3>
+        <p>O sistema cruza o M200/M210 e o E111 e desconta o que já foi escriturado. Também tira os NCMs monofásicos e de alíquota zero, e avisa quando dois relatórios cobrem o mesmo período.</p>
+      </article>
+      <article class="card reveal">
+        <span class="big">03</span>
+        <div class="ico"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 11l2 2 4-4"/></svg></div>
+        <span class="mono">A revisão</span>
+        <h3>A palavra final é do analista</h3>
+        <p>Cada achado passa por ele, que confirma, ajusta ou descarta. O que depende de documento, como o laudo da energia elétrica, aparece como pendente e fica separado do total.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CICLO -->
+<section style="background:var(--soft)">
+  <div class="wrap ciclo">
+    <div class="loop reveal" aria-hidden="true">
+      <svg viewBox="0 0 400 400"><circle class="ring" cx="200" cy="200" r="150" fill="none" stroke="#E5392B" stroke-width="2"/></svg>
+      <div class="centro"><b>cada achado</b><span>com nota de risco e memória de cálculo</span></div>
+      <div class="node n1"><span class="mono">01</span><b>O upload abre o caso</b></div>
+      <div class="node n2"><span class="mono">02</span><b>A conta sai em código</b></div>
+      <div class="node n3"><span class="mono">03</span><b>A IA classifica e redige</b></div>
+      <div class="node n4"><span class="mono">04</span><b>O analista revisa e aprova</b></div>
+    </div>
+    <div>
+      <span class="mono kicker">Como o motor trabalha</span>
+      <h2>Cada crédito sai com nota</h2>
+      <p class="lead">Verde para o que vai pelo administrativo, amarelo para tese judicial. Cada achado leva uma nota de risco, e o que depende de documento fica marcado como pendente.</p>
+      <div class="notas reveal">
+        <div><b>A</b><span>Previsto em lei ou já pacificado</span></div>
+        <div><b>B</b><span>Bons argumentos, risco baixo</span></div>
+        <div><b>C</b><span>Pede ação judicial</span></div>
+        <div><b>D</b><span>Alto risco de questionamento</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- POR DENTRO -->
+<section>
+  <div class="wrap">
+    <span class="mono kicker">O sistema por dentro</span>
+    <h2>Do relatório que entra ao slide que sai</h2>
+    <p class="lead">Telas do sistema em ambiente de demonstração, com dados fictícios.</p>
+
+    <div class="steps">
+      <div class="step reveal">
+        <div class="txt">
+          <span class="n">01</span>
+          <h3>Um upload abre o caso</h3>
+          <p>O analista sobe o Cartão CNPJ e todos os relatórios do MA de uma vez. O sistema lê CNPJ, CNAE e atividade, e libera as teses de indústria só quando a empresa é indústria.</p>
+          <span class="mono real"><i></i>Tela do sistema · novo diagnóstico</span>
+        </div>
+        <div class="janela larga"><div class="screen"><div class="bar"><i></i><i></i><i></i><span class="mono">novo diagnóstico</span></div><video src="midia/vtax-novo.mp4" poster="midia/vtax-novo.jpg" muted loop playsinline preload="metadata" data-loop aria-label="Tela do sistema: novo diagnóstico, com o envio do Cartão CNPJ e dos relatórios do MA"></video></div></div>
+      </div>
+
+      <div class="step reveal">
+        <div class="txt">
+          <span class="n">02</span>
+          <h3>Crédito tese por tese, cada um com nota</h3>
+          <p>ICMS na base do PIS/Cofins, entrada sem crédito de ICMS, ICMS-ST, PIS/Cofins na própria base. Verde para administrativo, amarelo para tese judicial, nota de A a D.</p>
+          <p class="ganho">Com a regra escrita, o levantamento não depende de ninguém lembrar a ordem.</p>
+          <span class="mono real"><i></i>Tela do sistema · achados do caso</span>
+        </div>
+        <div class="janela larga"><div class="screen"><div class="bar"><i></i><i></i><i></i><span class="mono">achados do caso</span></div><video src="midia/vtax-caso.mp4" poster="midia/vtax-caso.jpg" muted loop playsinline preload="metadata" data-loop aria-label="Tela do sistema: achados do diagnóstico, cada um com a sua nota"></video></div></div>
+      </div>
+
+      <div class="step reveal">
+        <div class="txt">
+          <span class="n">03</span>
+          <h3>A reunião chega com três arquivos</h3>
+          <p>O PDF do caso, a planilha dos cálculos e a apresentação com a marca do escritório: dados da empresa, crédito encontrado, passivo e proposta.</p>
+          <p class="ganho">Ninguém da equipe monta slide.</p>
+          <span class="mono real"><i></i>Tela do sistema · os três arquivos do caso</span>
+        </div>
+        <div class="janela larga">
+          <div class="screen"><div class="bar"><i></i><i></i><i></i><span class="mono">caso</span></div><img src="midia/vtax-saida.jpg" alt="Tela do caso com os botões Exportar PDF do caso, Apresentação para reunião e Planilha dos cálculos" loading="lazy"></div>
+          <div class="botao"><span class="mono">Os três arquivos</span><img src="midia/vtax-botoes.jpg" alt="" loading="lazy"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fluxo reveal" aria-label="Caminho do caso">
+      <div><span class="bol"><svg viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/></svg></span><b>Cartão CNPJ e MA</b><span>todos os relatórios de uma vez</span></div>
+      <div><span class="bol"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 9h6v6H9z"/></svg></span><b>O motor</b><span>conta em código, IA classifica</span></div>
+      <div><span class="bol"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 11l2 2 4-4"/></svg></span><b>A revisão</b><span>o analista confirma cada achado</span></div>
+      <div><span class="bol"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="1"/><path d="M8 20h8M12 16v4"/></svg></span><b>A reunião</b><span>PDF, planilha e apresentação</span></div>
+    </div>
+
+    <div class="dono reveal" style="margin-top:56px">
+      <div>
+        <h3>O passivo no mesmo caso</h3>
+      </div>
+      <p style="max-width:60ch">O analista sobe os PDFs do e-CAC, da PGFN e do CAPAG, mesmo escaneados e com qualquer nome de arquivo. O sistema concilia Receita, dívida ativa, estadual e débito corrente, aponta os pontos críticos e lista o que falta para fechar o número.</p>
+    </div>
+
+    <div style="text-align:center;margin-top:48px" class="reveal">
+      <button class="btn" type="button" data-abrir>Quero ver o sistema rodando</button>
+    </div>
+  </div>
+</section>
+
+<!-- ANTES X HOJE -->
+<section style="background:var(--soft)">
+  <div class="wrap">
+    <span class="mono kicker">O que mudou no escritório</span>
+    <h2>O analista parou de cruzar planilha</h2>
+    <div class="ba reveal">
+      <div class="antes"><span class="mono">Antes</span><p>Um Excel para cada tese, cruzado à mão, e depois o diagnóstico e os slides montados empresa por empresa.</p></div>
+      <div class="seta" aria-hidden="true">→</div>
+      <div class="hoje"><span class="mono">Hoje</span><p>O analista sobe os arquivos e revisa os achados. A conta, o desconto do que já foi aproveitado, as notas e os slides ficam com o sistema.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SEU ESCRITÓRIO -->
+<section>
+  <div class="wrap">
+    <span class="mono kicker">Agora o seu escritório</span>
+    <h2>Qual tarefa da sua equipe ainda é feita à mão?</h2>
+    <p class="lead">Aqui era o cruzamento de planilha. No seu escritório pode ser o extrato em PDF, a guia que precisa chegar ao cliente ou o honorário que ninguém reajustou. Otavio já tirou três tarefas da mão de uma equipe:</p>
+
+    <div class="casos">
+      <article class="caso este reveal">
+        <span class="mono onde"><i>SP</i>Escritório tributário do interior</span>
+        <h3>O levantamento de 5 anos de crédito</h3>
+        <p>Cada tese com nota de risco e a apresentação da reunião pronta.</p>
+        <span class="tag ok selo">O caso deste vídeo</span>
+      </article>
+      <article class="caso reveal">
+        <span class="mono onde"><i>EUA</i>Contadora com 5 escritórios</span>
+        <h3>A classificação do extrato, que aprende com a equipe</h3>
+        <p>No piloto, 90% das transações de dois meses saíram classificadas sozinhas.</p>
+      </article>
+      <article class="caso reveal">
+        <span class="mono onde"><i>MG</i>O escritório da família, Uberaba</span>
+        <h3>O dia do escritório numa tela só</h3>
+        <p>O que está atrasado aparece de manhã, as guias saem em lote com aviso de quem baixou e o honorário defasado aparece sozinho.</p>
+      </article>
+    </div>
+
+    <div class="dono reveal">
+      <div>
+        <h3>E o sistema fica com o escritório</h3>
+        <p style="margin-top:6px">O deste vídeo leva o nome do escritório, não o do Otavio.</p>
+      </div>
+      <div class="pills"><span>Com a marca do escritório</span><span>No servidor do escritório</span><span>Com o banco de dados do escritório</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- QUEM -->
+<section style="padding-top:20px">
+  <div class="wrap who">
+    <!-- Foto enviada em 11/11 (640 px). TROCAR por uma em alta quando tiver. -->
+    <figure class="photo reveal"><img src="midia/otavio-pimenta.jpg" alt="Otavio Pimenta" loading="lazy"><figcaption class="mono">Otavio Pimenta · contador</figcaption></figure>
+    <div class="reveal">
+      <span class="mono kicker">Quem construiu</span>
+      <h2>Otavio Pimenta, o contador que constrói o sistema</h2>
+      <p class="lead">Em abril, numa viagem com contadores de São Paulo, todo mundo na mesa dizia que usava IA. Usavam para conversar no chat. Otavio foi ao escritório de um deles e transformou o trabalho do analista neste sistema.</p>
+      <p>É sucessor de um escritório com mais de 30 anos em Uberaba-MG, fundado pelo avô e pelo pai, onde hoje cuida da gestão.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRÓXIMA ETAPA -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="next reveal">
+      <div>
+        <span class="mono kicker">Depois do vídeo</span>
+        <h2>Reunião de Diagnóstico</h2>
+        <p class="lead">No fim do vídeo, Otavio abre a agenda: 40 minutos olhando o seu escritório para escolher a primeira rotina que sai da mão da equipe.</p>
+      </div>
+      <ul>
+        <li><b>01</b>Como o escritório funciona hoje</li>
+        <li><b>02</b>O que vocês já usam de IA</li>
+        <li><b>03</b>Quais sistemas de contabilidade estão na operação</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="final reveal">
+    <span class="mono kicker">IA para Contabilidade na Prática · Solução 1</span>
+    <h2>Veja a tela. Depois imagine a sua marca nela.</h2>
+    <button class="btn" type="button" data-abrir>Quero ver o sistema rodando</button>
+    <p class="micro">Gratuito. O vídeo abre assim que você se cadastra.</p>
+  </div>
+  <footer><span>Otavio Pimenta · IA sob medida para escritórios contábeis</span><span class="mono">IA para Contabilidade na Prática</span></footer>
+</div>
+
+<dialog id="dlg" aria-labelledby="dlg-t">
+  <form class="fm" id="form" novalidate>
+    <button class="x" type="button" data-fechar aria-label="Fechar">×</button>
+    <h3 id="dlg-t">Para onde o Otavio manda o vídeo?</h3>
+    <p>Você assiste agora e recebe o link por e-mail.</p>
+    <label for="f-nome">Nome</label>
+    <input id="f-nome" name="nome" autocomplete="name" required>
+    <span class="err">Escreva o seu nome.</span>
+    <label for="f-whats">WhatsApp</label>
+    <input id="f-whats" name="whatsapp" inputmode="tel" autocomplete="tel" placeholder="(34) 99999-9999" required>
+    <span class="err">Confira o número, com DDD.</span>
+    <label for="f-email">E-mail</label>
+    <input id="f-email" name="email" type="email" inputmode="email" autocomplete="email" required>
+    <span class="err">Confira o e-mail.</span>
+    <label for="f-esc">Nome do escritório</label>
+    <input id="f-esc" name="escritorio" autocomplete="organization" required>
+    <span class="err">Escreva o nome do escritório.</span>
+    <button class="btn" type="submit" id="enviar">Quero ver o sistema rodando</button>
+    <p class="lgpd">Seus dados são usados só para enviar o vídeo e os materiais do Otavio.</p>
+  </form>
+</dialog>
+
+<script>
+/* ===== CONFIG: trocar antes de publicar ===== */
+var CONFIG = {
+  formId: "lp-solucao-1",
+  redirect: "video.html",   // página do vídeo
+  webhook: ""               // endpoint que recebe o lead; vazio = não envia
+};
+
+(function(){
+  var dlg = document.getElementById("dlg");
+  var form = document.getElementById("form");
+  var botao = document.getElementById("enviar");
+
+  document.querySelectorAll("[data-abrir]").forEach(function(b){
+    b.addEventListener("click", function(){
+      if (dlg.showModal) dlg.showModal(); else dlg.setAttribute("open","");
+      setTimeout(function(){ document.getElementById("f-nome").focus(); }, 60);
+    });
+  });
+  document.querySelector("[data-fechar]").addEventListener("click", function(){ dlg.close(); });
+  dlg.addEventListener("click", function(e){ if (e.target === dlg) dlg.close(); });
+
+  var w = document.getElementById("f-whats");
+  w.addEventListener("input", function(){
+    var d = w.value.replace(/\D/g,"").slice(0,11), o = d;
+    if (d.length > 2)  o = "(" + d.slice(0,2) + ") " + d.slice(2);
+    if (d.length > 7)  o = "(" + d.slice(0,2) + ") " + d.slice(2,7) + "-" + d.slice(7);
+    if (d.length === 10) o = "(" + d.slice(0,2) + ") " + d.slice(2,6) + "-" + d.slice(6);
+    w.value = o;
+  });
+
+  function utm(k){ return new URLSearchParams(location.search).get(k) || ""; }
+
+  function validar(){
+    var ok = true, primeiro = null;
+    var regras = {
+      nome: function(v){ return v.trim().length >= 2; },
+      whatsapp: function(v){ var n = v.replace(/\D/g,"").length; return n === 10 || n === 11; },
+      email: function(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()); },
+      escritorio: function(v){ return v.trim().length >= 2; }
+    };
+    Object.keys(regras).forEach(function(k){
+      var el = form.elements[k], bom = regras[k](el.value);
+      el.classList.toggle("bad", !bom);
+      if (!bom) { ok = false; primeiro = primeiro || el; }
+    });
+    if (primeiro) primeiro.focus();
+    return ok;
+  }
+  form.addEventListener("input", function(e){ if (e.target.classList) e.target.classList.remove("bad"); });
+
+  var enviado = false;
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    if (enviado) return;
+    if (!validar()) return;           // inválido: nenhum evento, nenhum redirecionamento
+    enviado = true;
+    botao.disabled = true; botao.textContent = "Abrindo o vídeo…";
+
+    var payload = {
+      nome: form.elements.nome.value.trim(),
+      whatsapp: form.elements.whatsapp.value.replace(/\D/g,""),
+      email: form.elements.email.value.trim().toLowerCase(),
+      escritorio: form.elements.escritorio.value.trim(),
+      origem: CONFIG.formId,
+      pagina: location.pathname,
+      utm_source: utm("utm_source"), utm_medium: utm("utm_medium"), utm_campaign: utm("utm_campaign"),
+      utm_content: utm("utm_content"), utm_term: utm("utm_term")
+    };
+
+    if (CONFIG.webhook) {
+      try {
+        fetch(CONFIG.webhook, { method:"POST", headers:{ "Content-Type":"application/json" }, body: JSON.stringify(payload), keepalive: true }).catch(function(){});
+      } catch (err) {}
+    }
+
+    var redirecionou = false;
+    function go(){
+      if (redirecionou) return;
+      redirecionou = true;
+      location.href = CONFIG.redirect + (location.search || "");
+    }
+
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: "lead_gerado",
+      form_id: CONFIG.formId,
+      pagina: location.pathname,
+      utm_source: payload.utm_source || "",
+      utm_medium: payload.utm_medium || "",
+      utm_campaign: payload.utm_campaign || "",
+      eventCallback: go,
+      eventTimeout: 1500
+    });
+    setTimeout(go, 1800);
+  });
+
+  // medidor e contador do hero
+  var parado = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var g = document.getElementById("gauge"), c = document.querySelector("[data-conta]");
+  if (g && c) setTimeout(function(){
+    g.style.strokeDashoffset = (194.8 * 0.10).toFixed(1);
+    var alvo = +c.getAttribute("data-conta");
+    if (parado) { c.textContent = alvo; return; }
+    var t0 = null;
+    function passo(t){ if(!t0) t0 = t; var p = Math.min((t - t0) / 1600, 1); c.textContent = Math.round(alvo * (1 - Math.pow(1 - p, 3))); if (p < 1) requestAnimationFrame(passo); }
+    requestAnimationFrame(passo);
+  }, 500);
+
+  // 1 em cada 10: um quadrado de cada vez
+  document.querySelectorAll(".dez .q i").forEach(function(q, i){ q.style.transitionDelay = (i * 0.08) + "s"; });
+
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(en){ if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } });
+    }, { threshold: .15 });
+    document.querySelectorAll(".reveal").forEach(function(el){ io.observe(el); });
+
+    var iv = new IntersectionObserver(function(es){
+      es.forEach(function(en){
+        if (parado) return;
+        if (en.isIntersecting) { var p = en.target.play(); if (p && p.catch) p.catch(function(){}); }
+        else en.target.pause();
+      });
+    }, { threshold: .25 });
+    document.querySelectorAll("video[data-loop]").forEach(function(v){ iv.observe(v); });
+  } else {
+    document.querySelectorAll(".reveal").forEach(function(el){ el.classList.add("in"); });
+  }
+})();
+</script>
+</body>
+</html>
